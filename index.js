@@ -22,7 +22,7 @@ client.on('voiceStateUpdate', (oldState, newState) => {
     if (!notifChannel) return;
 
     if (!oldState.channelId && newState.channelId) {
-        notifChannel.send(`🔊 **${member.user.tag}** telah join voice **#${newState.channel.name}**`);
+        notifChannel.send(`🔊 **${member.user.tag}** telah join voice @everyone **#${newState.channel.name}**`);
     } else if (oldState.channelId && newState.channelId && oldState.channelId !== newState.channelId) {
         notifChannel.send(`🔀 **${member.user.tag}** pindah dari **#${oldState.channel.name}** ke **#${newState.channel.name}**`);
     } else if (oldState.channelId && !newState.channelId) {
